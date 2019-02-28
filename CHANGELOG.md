@@ -1,3 +1,9 @@
+# 4.2.0
+
+- Add `Accept-Encoding` header ("identity" by default)
+- Include `Content-Type` and `Content-Length` for GET requests with non-empty `Body`
+- Allow async timeouts >60 seconds
+
 # 4.1.0
 
 - Update `UrlEncode` behavior to target different encoding RFCs based on `UrlEncodingMode`
@@ -11,6 +17,9 @@
 - __4.1.1__ Adjust `CookieUrlEncoding` mode to match value encoding in RFC 6265 (rather than name encoding)
 - __4.1.2__ Compatibility with 64-bit Mac
 - __4.1.3__ Mac bugfix for % encoding
+- __4.1.4__ Fix compilation issues for 64-bit Mac
+- __4.1.5__ Update VBA-JSON to v2.3.0 (fixes JSON slowdown on Windows)
+- __4.1.6__ Fix libc bug in Mac 16.21.1
 
 # 4.0.0
 

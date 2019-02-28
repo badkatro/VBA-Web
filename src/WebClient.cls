@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = True
 ''
-' WebClient v4.1.3
+' WebClient v4.1.6
 ' (c) Tim Hall - https://github.com/VBA-tools/VBA-Web
 '
 ' `WebClient` executes requests and handles response and is responsible for functionality shared between requests,
@@ -641,6 +641,11 @@ Public Function PrepareCurlRequest(Request As WebRequest) As String
     ' Setup redirects
     If Me.FollowRedirects Then
         web_Curl = web_Curl & " --location"
+    End If
+    
+    ' Enable compressed if Accept-Encoding != "identity"
+    If Request.AcceptEncoding <> "identity" Then
+        web_Curl = web_Curl & " --compressed"
     End If
 
     ' Set headers and cookies
